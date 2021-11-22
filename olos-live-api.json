@@ -50,15 +50,7 @@
               "type": "string"
             }
           }
-        ],
-        "x-amazon-apigateway-integration": {
-          "httpMethod": "ANY",
-          "uri": "arn:aws:elasticloadbalancing:sa-east-1:306609338925:listener/app/k8s-olosliveservices-792b969306/90fc2d6f0ce1f2e5/360f3cbfcecd845a",
-          "payloadFormatVersion": "1.0",
-          "connectionId": "qi7b0b",
-          "connectionType": "VPC_LINK",
-          "type": "http_proxy"
-        }
+        ]
       }
     },
     "/api/config/campaigns/{campaignId}/organizations": {
@@ -96,15 +88,7 @@
               "type": "string"
             }
           }
-        ],
-        "x-amazon-apigateway-integration": {
-          "httpMethod": "ANY",
-          "uri": "arn:aws:elasticloadbalancing:sa-east-1:306609338925:listener/app/k8s-olosliveservices-792b969306/90fc2d6f0ce1f2e5/360f3cbfcecd845a",
-          "payloadFormatVersion": "1.0",
-          "connectionId": "qi7b0b",
-          "connectionType": "VPC_LINK",
-          "type": "http_proxy"
-        }
+        ]
       }
     },
     "/api/config/organizations/{organizationId}/campaigns/{campaignId}": {
@@ -150,15 +134,7 @@
               "type": "string"
             }
           }
-        ],
-        "x-amazon-apigateway-integration": {
-          "httpMethod": "ANY",
-          "uri": "arn:aws:elasticloadbalancing:sa-east-1:306609338925:listener/app/k8s-olosliveservices-792b969306/90fc2d6f0ce1f2e5/360f3cbfcecd845a",
-          "payloadFormatVersion": "1.0",
-          "connectionId": "qi7b0b",
-          "connectionType": "VPC_LINK",
-          "type": "http_proxy"
-        }
+        ]
       },
       "delete": {
         "operationId": "UnbindOrganizationFromCampaign",
@@ -202,15 +178,7 @@
               "type": "string"
             }
           }
-        ],
-        "x-amazon-apigateway-integration": {
-          "httpMethod": "ANY",
-          "uri": "arn:aws:elasticloadbalancing:sa-east-1:306609338925:listener/app/k8s-olosliveservices-792b969306/90fc2d6f0ce1f2e5/360f3cbfcecd845a",
-          "payloadFormatVersion": "1.0",
-          "connectionId": "qi7b0b",
-          "connectionType": "VPC_LINK",
-          "type": "http_proxy"
-        }
+        ]
       }
     },
     "/api/config/campaigns/organizations/{organizationId}": {
@@ -268,14 +236,6 @@
               }
             }
           }
-        },
-        "x-amazon-apigateway-integration": {
-          "httpMethod": "ANY",
-          "uri": "arn:aws:elasticloadbalancing:sa-east-1:306609338925:listener/app/k8s-olosliveservices-792b969306/90fc2d6f0ce1f2e5/360f3cbfcecd845a",
-          "payloadFormatVersion": "1.0",
-          "connectionId": "qi7b0b",
-          "connectionType": "VPC_LINK",
-          "type": "http_proxy"
         }
       },
       "delete": {
@@ -332,14 +292,6 @@
               }
             }
           }
-        },
-        "x-amazon-apigateway-integration": {
-          "httpMethod": "ANY",
-          "uri": "arn:aws:elasticloadbalancing:sa-east-1:306609338925:listener/app/k8s-olosliveservices-792b969306/90fc2d6f0ce1f2e5/360f3cbfcecd845a",
-          "payloadFormatVersion": "1.0",
-          "connectionId": "qi7b0b",
-          "connectionType": "VPC_LINK",
-          "type": "http_proxy"
         }
       }
     },
