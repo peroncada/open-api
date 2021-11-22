@@ -1,4 +1,306 @@
 {
+  "components": {
+    "examples": {},
+    "headers": {},
+    "parameters": {},
+    "requestBodies": {},
+    "responses": {},
+    "schemas": {
+      "Time": {
+        "properties": {
+          "hour": {
+            "type": "number",
+            "format": "double"
+          },
+          "minute": {
+            "type": "number",
+            "format": "double"
+          },
+          "second": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": ["hour", "minute", "second"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Day": {
+        "properties": {
+          "day_of_week": {
+            "type": "number",
+            "format": "double"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "start_time": {
+            "$ref": "#/components/schemas/Time"
+          },
+          "end_time": {
+            "$ref": "#/components/schemas/Time"
+          }
+        },
+        "required": ["day_of_week", "active", "start_time", "end_time"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ScheduleGrid": {
+        "properties": {
+          "week": {
+            "items": {
+              "$ref": "#/components/schemas/Day"
+            },
+            "type": "array"
+          }
+        },
+        "required": ["week"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Campaign": {
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "campaign_type_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "billing_code": {
+            "type": "string"
+          },
+          "country_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "state_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "city_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "start_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "pause_plan_id": {
+            "type": "number",
+            "format": "double"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "outbound_method": {
+            "type": "number",
+            "format": "double"
+          },
+          "max_channel_ocuppancy": {
+            "type": "number",
+            "format": "double"
+          },
+          "analysis_period": {
+            "type": "number",
+            "format": "double"
+          },
+          "time_target_in_att_matrix": {
+            "type": "number",
+            "format": "double"
+          },
+          "time_target_agent_idle": {
+            "type": "number",
+            "format": "double"
+          },
+          "always_use_max_channels": {
+            "type": "boolean"
+          },
+          "percentage_aggressiveness": {
+            "type": "number",
+            "format": "double"
+          },
+          "working_schedule": {
+            "$ref": "#/components/schemas/ScheduleGrid"
+          },
+          "dialing_schedule": {
+            "$ref": "#/components/schemas/ScheduleGrid"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "code",
+          "description",
+          "campaign_type_id",
+          "billing_code",
+          "country_id",
+          "state_id",
+          "city_id",
+          "start_date",
+          "end_date",
+          "pause_plan_id",
+          "active",
+          "outbound_method",
+          "max_channel_ocuppancy",
+          "analysis_period",
+          "time_target_in_att_matrix",
+          "time_target_agent_idle",
+          "always_use_max_channels",
+          "percentage_aggressiveness",
+          "working_schedule",
+          "dialing_schedule"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Organization": {
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "active": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "name", "code", "description", "active"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "PausePlan": {
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        },
+        "required": ["id", "description", "active"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Pause": {
+        "properties": {
+          "id": {
+            "type": "number",
+            "format": "double"
+          },
+          "description": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "quantity_allowed": {
+            "type": "number",
+            "format": "double"
+          },
+          "time_length": {
+            "type": "number",
+            "format": "double"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "code",
+          "quantity_allowed",
+          "time_length",
+          "active"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "IdentityProviderUser": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key_name": {
+            "type": "string"
+          },
+          "key_value": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "key_name", "key_value"],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "User": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "identity_provider": {
+            "$ref": "#/components/schemas/IdentityProviderUser"
+          },
+          "direct_permissions": {},
+          "role_ids": {
+            "items": {},
+            "type": "array"
+          },
+          "user_name": {
+            "type": "string"
+          },
+          "is_agent": {
+            "type": "boolean"
+          },
+          "is_supervisor": {
+            "type": "boolean"
+          },
+          "active": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "identity_provider",
+          "direct_permissions",
+          "role_ids",
+          "user_name",
+          "is_agent",
+          "is_supervisor",
+          "active"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {}
+  },
   "info": {
     "title": "olos-live",
     "version": "0.2.0",
